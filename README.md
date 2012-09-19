@@ -6,7 +6,7 @@ An easy to use client for integrating push notifications into Ruby-based applica
 
 Add this line to your application's Gemfile:
 
-    gem 'push_io_client'
+    gem 'pushio'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install push_io_client
+    $ gem install pushio
 
 ## Usage
 
