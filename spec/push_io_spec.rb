@@ -1,7 +1,7 @@
 require "rspec"
-require 'push_io_client'
+require 'push_io'
 
-describe PushIoClient do
+describe PushIo do
   context "unconfigured" do
     it "should tell you how to configure" do
       expect{PushIo::Client.new}.to raise_error(PushIo::UnconfiguredClientError)

@@ -11,9 +11,9 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "push_io_client"
+  gem.name          = "pushio"
   gem.require_paths = ["lib"]
-  gem.version       = PushIoClient::VERSION
+  gem.version       = PushIo::VERSION
 
   gem.add_dependency("httpclient", '>= 2.2.7')
   gem.add_dependency("multi_json", '>= 1.3.0')

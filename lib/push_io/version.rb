@@ -1,3 +1,3 @@
-module PushIoClient
+module PushIo
   VERSION = "0.0.1"
 end
