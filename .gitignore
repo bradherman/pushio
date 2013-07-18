@@ -18,3 +18,4 @@ tmp
 .DS_Store
 /.idea/
 /.rvmrc
+/spec/pushio_config.yml

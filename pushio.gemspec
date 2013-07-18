@@ -2,7 +2,7 @@
 require File.expand_path('../lib/push_io/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Push IO LLC", "Sean McKibben"]
+  gem.authors       = ["Push IO Inc.", "Sean McKibben"]
   gem.email         = ["sean@push.io"]
   gem.description   = %q{Ruby client library to send push notifications via the Push IO API. See: http://push.io for more information and to set up your account.}
   gem.summary       = %q{This gem enables developers to easily create new notifications and send them via the Push IO API from Ruby apps.}
