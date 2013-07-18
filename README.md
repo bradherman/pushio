@@ -39,27 +39,27 @@ end
 
 Send a broadcast push to everyone registered for your app:
 ```ruby
-notification_id = PushIo::Client.deliver_broadcast :payload => {:message => "Broadcast Test"}
+notification_id = PushIo::Client.new.deliver_broadcast :payload => {:message => "Broadcast Test"}
 ```
 
 Send a push to an audience:
 ```ruby
-notification_id = PushIo::Client.deliver_to_audience "friends", :payload => {:message => "Howdy Friends", :payload_apns => {:badge => 8}}
+notification_id = PushIo::Client.new.deliver_to_audience "friends", :payload => {:message => "Howdy Friends", :payload_apns => {:badge => 8}}
 ```
 
 Send a push to a targeted query:
 ```ruby
-notification_id = PushIo::Client.deliver_to_query "Alpha or Bravo", :payload => {:message => "Query Test"}
+notification_id = PushIo::Client.new.deliver_to_query "Alpha or Bravo", :payload => {:message => "Query Test"}
 ```
 
 Send a push to a known device ID:
 ```ruby
-notification_id = PushIo::Client.deliver_to_ids "APIKEY1234_a123", ['B3606524-AE35-458A-9FE9-7B6FE8D99CE4'], :payload => {:message => "Hello Push IO"}
+notification_id = PushIo::Client.new.deliver_to_ids "APIKEY1234_a123", ['B3606524-AE35-458A-9FE9-7B6FE8D99CE4'], :payload => {:message => "Hello Push IO"}
 ```
 
 Send a push to a known device Token:
 ```ruby
-notification_id = PushIo::Client.deliver_to_tokens "APIKEY1234_a123", ['abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd'], :payload => {:message => "Hello Push IO"}
+notification_id = PushIo::Client.new.deliver_to_tokens "APIKEY1234_a123", ['abcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcdefabcd'], :payload => {:message => "Hello Push IO"}
 ```
 
 
