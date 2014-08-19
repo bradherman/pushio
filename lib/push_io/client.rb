@@ -75,6 +75,13 @@ module PushIo
       send_devices_post(opts) if ready_to_deliver_to_devices?(opts)
     end
 
+    def deliver_to_location(api_key, *args)
+      opts = args.extract_options!
+      raise PushIo::MissingOptionsError, "A latitude was not specified" unless opts[:lat]
+      raise PushIo::MissingOptionsError, "A longitude was not specified" unless opts[:lon]
+      raise PushIo::MissingOptionsError, "A distance was not specified" unless opts[:dist]
+      send_location_post(opts)
+    end
 
     private
 
@@ -96,6 +103,15 @@ module PushIo
     def send_post(opts)
       response = self.httpclient.post(send_url, {:body => build_post(opts)})
       parse_response(response)
+    end
+
+    def send_location_post(opts)
+      response = self.httpclient.post(send_url, {body: build_loc(opts)}
+      parse_response(response)
+    end
+
+    def build_loc(opts)
+      {location_query: {reg: {lat: opts[:lat], lon: opts[:lon], dist: opts[:dist]}}}
     end
 
     def build_post(opts)
